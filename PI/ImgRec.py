@@ -22,12 +22,12 @@ while True:
             print(names[int(c)])
     
     detections = sv.Detections.from_yolov8(result)
-    # labels = [
-    #     f"{model.model.names[class_id]}"
-    #     for _, class_id, _
-    #     in detections
-    # ]
-    frame = box_ann.annotate(scene=frame, detections = detections) #, labels = labels)
+    labels = []
+    # f"{model.model.names[class_id]}"
+    for class_id in detections.class_id:
+        labels.append(str(model.model.names[class_id]))
+    
+    frame = box_ann.annotate(scene=frame, detections = detections, labels = labels)
 
     cv2.imshow('yolov8', frame)
     if(cv2.waitKey(30) == 27):
