@@ -23,6 +23,9 @@ def isDetectingBox():
         labels.append(str(model.model.names[class_id]))
     
     frame = box_ann.annotate(scene=frame, detections = detections, labels = labels)
+    cv2.imshow('yolov8', frame)
+    # if(cv2.waitKey(30) == 27):
+    #   break
     if(detections):
         box = True
     return box
@@ -36,6 +39,4 @@ def isDetectingBox():
 # # ]
 # frame = box_ann.annotate(scene=frame, detections = detections) #, labels = labels)
 
-# cv2.imshow('yolov8', frame)
-# if(cv2.waitKey(30) == 27):
-#     break
+
