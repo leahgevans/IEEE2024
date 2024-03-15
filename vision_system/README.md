@@ -8,3 +8,7 @@ and numpy which I believe comes installed with the previous libraries, if not "p
 
 
 vision.py is the main vision system, it plots bounding boxes as well as prints the centroids of each detection, there is also a sleep timer to limit fps and avoid overheating.
+
+
+<img src="frame_screenshot_15.03.2024.png">
+<img src="detection_screenshot_15.03.2024.png">
