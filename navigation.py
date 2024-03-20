@@ -10,9 +10,9 @@ tolerance = .02
 #When a box is detected in the vision system loop, Call this function repeatedly
 def centerTargetStep(xCoord, yCoord, xMax, yMax):
     #Rotate robot until target is centered, within a tolerance
-    if( xCoord < xMax/2 * (1+tolerance) ):
+    if( xCoord < xMax/2 * (1-tolerance) ):
         turnLeft()
-    if( xCoord > xMax/2 * (1-tolerance) ):
+    if( xCoord > xMax/2 * (1+tolerance) ):
         turnLeft()
     
 def turnLeft():
